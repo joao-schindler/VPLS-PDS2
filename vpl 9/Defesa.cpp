@@ -8,6 +8,7 @@ void Defesa::_consumirEnergia(double qtd)
         if (this->_energia < 0)
             this->_energia = 0;
     }
+    return;
 }
 Defesa::~Defesa(){
     std::cout << "Defesa "<< this->_id << " desativada." << std::endl;

@@ -1,5 +1,6 @@
 #ifndef DEFESA_H
 #define DEFESA_H
+
 class Defesa
 {
 private:
@@ -12,7 +13,7 @@ protected:
 public:
     virtual void atacar(double &danoAcumulado) = 0;
     Defesa(int id, double energia);
-    ~Defesa();
+    virtual ~Defesa();
 };
 
 #endif

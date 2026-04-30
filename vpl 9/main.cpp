@@ -4,7 +4,7 @@
 #include <iostream>
 int main(){
     char a;
-    int id=0;
+    int id;
     BaseMilitar base;
     while(std::cin >> a){
       double energia;
@@ -15,30 +15,29 @@ int main(){
       switch (a)
       {
       case 'c':{
-        std :: cin >> energia >> intensidade ; 
+        std :: cin >> id >> energia >> intensidade ; 
         Canhao *c=new Canhao(id,energia,intensidade);
         base.adicionarDefesa(c);
-        id++;
         break;
       }
       case 'o':{
-        std :: cin >> energia >> intensidade >> gravidade; 
+        std :: cin >> id >> energia >> intensidade >> gravidade; 
         CanhaoOrbital *o= new CanhaoOrbital(id,energia,intensidade,gravidade);
         base.adicionarDefesa(o);
-        id++;
+        break;
       }
       case 'm':{
-        std :: cin >> energia >> misseis;
+        std :: cin >> id >> energia >> misseis;
         LancadorMissil *m=new LancadorMissil(id,energia,misseis);
         base.adicionarDefesa(m);
-        id++;
+        break;
       }
       case 'd':{
         std :: cin >> saude;
         base.defender(saude);
+        break;
       }
       default:{
-        base.~BaseMilitar();
         return 0;
       }
         
